@@ -2,6 +2,8 @@
 acl支持的文件系统：ext格式和xfx
 
 df -T  可查看文件系统格式
+tune2fs –l  /dev/sdb1  查看是否具有acl功能
+mount –o acl /dev/sdb1 /mnt/test
 
 mount -o remount, acl 挂载点
 
@@ -35,9 +37,6 @@ acl中
 
 mask是限高线，最大权限不能超过mask的权限
 
-
-tune2fs –o acl /dev/sdb1
-mount –o acl /dev/sdb1 /mnt/test
 
 -m 设定ACL权限 
 -x 删除指定的ACL权限 
