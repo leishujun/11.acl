@@ -1,0 +1,30 @@
+
+acl支持的文件系统：
+
+mount -o remount, acl 挂载点
+
+tune2fs –o acl /dev/sdb1
+mount –o acl /dev/sdb1 /mnt/test
+
+-m 设定ACL权限 
+-x 删除指定的ACL权限 
+-b 删除所有的ACL权限 
+-d 设定默认的ACL权限 
+-k 删除默认的ACL权限 
+-R 递归设定ACL权限
+
+     setfacl  -m  u:用户名:权限  文件            //设定用户的ACL权限
+     setfacl  -m  g:组名:权限  文件               //设定组的ACL权限
+     setfacl  -m  m:权限  文件                    //设定最大有效权限
+
+     setfacl  -x  u:用户  文件                     //删除用户的ACL权限
+     setfacl  -x  g:   文件                         //删除组的ACL权限 
+ 
+     setfacl -m d:u:用户名:权限   文件     //设定默认用户有效权限
+     setfacl -m d:g:组名:权限  文件        //设定默认组有效权限
+     
+     setfacl -k  文件                             //删除所有默认的权限
+
+     setfacl  -b 文件                           //删除所有的ACL权限设定，包括默认的有效权限设定
+
+
